@@ -1,0 +1,315 @@
+/* ══════════════════════════════════════════════
+   AUTHORITATIVE MINIMAL ACADEMIC SITE
+   Sora headings, Inter body, raspberry accent
+   ══════════════════════════════════════════════ */
+
+:root {
+  --bg: #F7F7F5;
+  --bg-subtle: #EFEFED;
+  --text: #1F1F23;
+  --text-dim: #666874;
+  --text-light: #888895;
+  --accent: #B03060;
+  --accent-hover: #8E3B63;
+  --border: #D8DADF;
+  --heading: 'Montserrat', -apple-system, sans-serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Base ── */
+body {
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+}
+
+::selection { background: rgba(176,48,96,0.12); }
+
+/* ── Navbar — bigger, bolder ── */
+.navbar {
+  background: var(--bg) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 1rem 0;
+  box-shadow: none !important;
+}
+
+.navbar-brand {
+  font-family: var(--heading) !important;
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+  color: var(--text) !important;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  color: var(--text-dim) !important;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 450;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+  padding-left: 1.3rem !important;
+  padding-right: 1.3rem !important;
+}
+
+.navbar .nav-link:hover { color: var(--text) !important; }
+.navbar .nav-link.active { color: var(--text) !important; font-weight: 600; }
+
+/* ── Hero / About — centered photo, full-width text ── */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  margin: 2.5rem auto 2rem;
+  padding: 0 2rem;
+}
+
+.hero-photo {
+  margin-bottom: 1.5rem;
+}
+
+.hero-photo img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.hero-photo img:hover {
+  filter: grayscale(0%);
+}
+
+.hero-text {
+  max-width: 760px;
+  width: 100%;
+}
+
+.hero-text p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.hero-text p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero-text a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-text a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin: 1.5rem auto;
+  }
+  .hero-photo img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* ── Interest tags ── */
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.2rem;
+}
+
+.interest-tags span {
+  padding: 0.18rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  color: var(--text-dim);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  letter-spacing: 0.01em;
+}
+
+/* ── Content pages ── */
+.content-page {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+/* ── Section headers — Sora, bold ── */
+.section-header {
+  font-family: var(--heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.02em;
+}
+
+/* ── Publication entries ── */
+.pub-entry {
+  margin-bottom: 0;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.pub-entry:last-child { border-bottom: none; }
+
+.pub-entry .pub-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.pub-entry .pub-venue {
+  color: var(--text-dim);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.88rem;
+}
+
+.pub-entry .pub-links {
+  margin-top: 0.5rem;
+}
+
+.pub-entry .pub-links a,
+.pub-links a {
+  display: inline-block;
+  margin-right: 0.35rem;
+  margin-bottom: 0.25rem;
+  padding: 0.12rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(176,48,96,0.25);
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.pub-entry .pub-links a:hover,
+.pub-links a:hover {
+  background: var(--accent);
+  color: var(--bg) !important;
+  border-color: var(--accent);
+}
+
+.pub-entry .pub-awards {
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border);
+  font-style: italic;
+}
+
+/* ── Teaching items ── */
+.teaching-item {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.teaching-item:last-child { border-bottom: none; }
+
+.teaching-item .course-code {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
+.teaching-item .eval-badge {
+  display: inline-block;
+  padding: 0.08rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--mono);
+  color: var(--text-dim);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+/* ── Page titles ── */
+.quarto-title h1.title,
+#title-block-header h1 {
+  font-family: var(--heading);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
+#title-block-header {
+  max-width: none;
+}
+
+/* ── Links ── */
+.content-page a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.content-page a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* ── Footer ── */
+.nav-footer {
+  background: var(--bg) !important;
+  border-top: 1px solid var(--border) !important;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.nav-footer a { color: var(--text-dim) !important; }
+.nav-footer a:hover { color: var(--text) !important; }
+
+/* ── CV page ── */
+.content-page h2 {
+  font-family: var(--heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
+}
+
+.content-page dt { font-weight: 600; color: var(--text); }
+.content-page dd { color: var(--text-dim); margin-bottom: 0.3rem; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
