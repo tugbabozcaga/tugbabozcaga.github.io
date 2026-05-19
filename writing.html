@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Teaching – Tuğba Bozçağa</title>
+<title>Writing — Tuğba Bozçağa – Tuğba Bozçağa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ cookieconsent.run({
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./teaching.html" aria-current="page"> 
+    <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
@@ -138,7 +138,7 @@ cookieconsent.run({
 <span class="menu-text">Geospatial Analysis in R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./writing.html"> 
+    <a class="nav-link active" href="./writing.html" aria-current="page"> 
 <span class="menu-text">Writing</span></a>
   </li>  
   <li class="nav-item">
@@ -188,7 +188,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching</h1>
+<h1 class="title">Writing</h1>
 </div>
 
 
@@ -205,59 +205,54 @@ cookieconsent.run({
 </header>
 
 
-<div class="content-page">
-<div class="section-header">
-<p>Modules at King’s College London</p>
+<div class="writing-intro">
+<p>Occasional longer-form essays on my research, fieldwork, and the questions that motivated them. The full archive lives on <a href="https://tubabozcaga.substack.com">Substack</a>; a selection of recent posts appears below.</p>
 </div>
-<div class="teaching-item">
-<p><span class="course-code">7AAOM041</span></p>
-<p><strong><a href="https://www.tugbabozcaga.com/syllabus-7aaom041">PE of Development in Muslim Societies</a></strong></p>
+<div class="substack-embed">
+<iframe src="https://tubabozcaga.substack.com/embed" width="100%" height="320" style="border:1px solid var(--border); background:white; border-radius:8px;" frameborder="0" scrolling="no">
+</iframe>
 </div>
-<div class="teaching-item">
-<p><span class="course-code">7AAOM230</span></p>
-<p><strong><a href="https://www.tugbabozcaga.com/syllabus7aaom230">Quantitative Research Methods</a></strong></p>
+<section id="recent-posts" class="level2">
+<h2 class="anchored" data-anchor-id="recent-posts">Recent posts</h2>
+<div id="substack-posts" class="post-list">
+<p class="post-loading">
+Loading recent posts…
+</p>
 </div>
-<div class="teaching-item">
-<p><span class="course-code">7AAOM100</span></p>
-<p><strong>Research Design</strong> (co-taught)</p>
-</div>
-<div class="teaching-item">
-<p><span class="course-code">4AAOB113</span></p>
-<p><strong>Introduction to Politics - Comparative Politics</strong> (co-taught)</p>
-</div>
-<div class="section-header">
-<p>Workshops at MIT, as Instructor</p>
-</div>
-<div class="teaching-item">
-<p><strong>GIS Visualization and Analysis in R</strong> (Spring 2018, Spring 2019)</p>
-<p><a href="./gis-tutorial.html">Materials</a></p>
-</div>
-<div class="teaching-item">
-<p><strong>GitHub</strong> (Fall 2018)</p>
-<p><a href="https://github.com/tugbabozcaga/GitHub-Tutorial">Materials</a></p>
-</div>
-<div class="teaching-item">
-<p><strong>Introduction to LaTeX</strong> (Fall 2016)</p>
-<p><a href="https://www.dropbox.com/scl/fo/qar9nnpxa3md4i2qogjsi/AGBhu1nlR7W-iQS5y_2DDmk?rlkey=m6v8ud0sd6s86euh53hq5b5oa&amp;dl=0">Materials</a></p>
-</div>
-<div class="section-header">
-<p>Courses at MIT, as TA</p>
-</div>
-<div class="teaching-item">
-<p><strong>17.835 Machine Learning and Data Science in Politics</strong> (Professor In Song Kim, Spring 2018)</p>
-<p><a href="https://www.dropbox.com/s/t6fs46yzjiei0p3/syl-poldata.pdf?dl=0">Syllabus</a> | <a href="https://www.dropbox.com/s/1tg7tk0gv5gjg5i/Bozcaga_Nov11.pdf?dl=0">Sample Slides</a></p>
-</div>
-<div class="teaching-item">
-<p><strong>17.800 Quantitative Research Methods I: Regression</strong> (Professor Daniel Hidalgo, Fall 2016)</p>
-<p><a href="https://www.dropbox.com/s/451w1ycupo8oonk/17_800_syll16.pdf?dl=0">Syllabus</a> | <a href="https://www.dropbox.com/s/bvec5afm2oe29w2/rec9.pdf?dl=0">Sample Slides</a></p>
-</div>
-<div class="teaching-item">
-<p><strong>J-PAL Executive Education: Evaluating Social Programs</strong> (Summer 2016)</p>
-<p><a href="https://www.povertyactionlab.org/training/evaluating-social-programs">More Information</a></p>
-</div>
-</div>
+<script>
+(function() {
+  const feedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://tubabozcaga.substack.com/feed');
+  const container = document.getElementById('substack-posts');
+
+  fetch(feedUrl)
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('Feed fetch failed')))
+    .then(data => {
+      if (!data.items || !data.items.length) {
+        container.innerHTML = '<p>No posts yet.</p>';
+        return;
+      }
+      const posts = data.items.slice(0, 10);
+      container.innerHTML = posts.map(p => {
+        const date = new Date(p.pubDate).toLocaleDateString('en-GB', {year:'numeric', month:'long', day:'numeric'});
+        const excerpt = (p.description || '').replace(/<[^>]*>/g, '').replace(/\s+/g,' ').trim().slice(0, 240);
+        return `
+          <article class="post-card">
+            <h3 class="post-title"><a href="${p.link}" target="_blank" rel="noopener">${p.title}</a></h3>
+            <p class="post-meta">${date}</p>
+            <p class="post-excerpt">${excerpt}${excerpt.length === 240 ? '…' : ''}</p>
+            <p class="post-read"><a href="${p.link}" target="_blank" rel="noopener">Continue reading →</a></p>
+          </article>
+        `;
+      }).join('');
+    })
+    .catch(() => {
+      container.innerHTML = '<p>Posts could not be loaded automatically. <a href="https://tubabozcaga.substack.com" target="_blank" rel="noopener">Visit the Substack directly →</a></p>';
+    });
+})();
+</script>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
