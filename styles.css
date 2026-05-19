@@ -397,3 +397,82 @@ body {
   color: var(--accent-hover);
   text-decoration: underline;
 }
+
+/* ── Homepage grid + Substack side callout ── */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 3.5rem;
+  max-width: 1140px;
+  margin: 2.5rem auto 2rem;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+.home-grid .hero-section {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.substack-side-callout {
+  border-left: 2px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin-top: 4.5rem;
+  font-size: 0.88rem;
+}
+
+.callout-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  margin: 0 0 0.55rem 0;
+}
+
+.callout-title {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0 0 0.4rem 0;
+}
+
+.callout-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.callout-title a:hover {
+  color: var(--accent);
+}
+
+.callout-date {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--text-light);
+  margin: 0 0 0.95rem 0;
+}
+
+.callout-more a {
+  color: var(--accent);
+  font-size: 0.82rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.callout-more a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    gap: 2.5rem;
+  }
+  .substack-side-callout {
+    margin-top: 0;
+  }
+}
