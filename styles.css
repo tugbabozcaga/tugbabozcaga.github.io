@@ -59,6 +59,14 @@ body {
 .navbar .nav-link:hover { color: var(--text) !important; }
 .navbar .nav-link.active { color: var(--text) !important; font-weight: 600; }
 
+.navbar .nav-item.compact .nav-link {
+  padding-left: 0.4rem !important;
+  padding-right: 0.4rem !important;
+}
+.navbar .nav-item.compact .nav-link i {
+  font-size: 0.75rem;
+}
+
 /* ── Hero / About — centered photo, full-width text ── */
 .hero-section {
   display: flex;
